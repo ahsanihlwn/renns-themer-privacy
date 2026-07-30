@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kebijakan Privasi — Renns Themer</title>
+<title>Privacy Policy / Kebijakan Privasi — Renns Themer</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -44,7 +44,13 @@
 
   header {
     margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
   }
+
+  .header-text { flex: 1; min-width: 0; }
 
   .badge {
     display: inline-block;
@@ -69,6 +75,32 @@
     color: var(--text-secondary);
     font-size: 14px;
     margin: 0;
+  }
+
+  /* Language toggle: two buttons, the active one filled, the other outlined. */
+  .lang-toggle {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    padding-top: 4px;
+  }
+
+  .lang-toggle button {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--divider);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+
+  .lang-toggle button.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
   }
 
   h2 {
@@ -124,91 +156,217 @@
     color: var(--text-secondary);
     font-size: 13px;
   }
+
+  /* Only one language block renders at a time — toggled via a class on <body>. */
+  [data-lang] { display: none; }
+  body.lang-id [data-lang="id"] { display: block; }
+  body.lang-en [data-lang="en"] { display: block; }
+  body.lang-id [data-lang="id"].badge,
+  body.lang-en [data-lang="en"].badge { display: inline-block; }
 </style>
 </head>
-<body>
+<body class="lang-en">
   <div class="wrap">
     <header>
-      <span class="badge">Kebijakan Privasi</span>
-      <h1>Renns Themer</h1>
-      <p class="meta">Berlaku mulai 29 Juli 2026 &middot; <a href="privacy-en.html">Read in English</a></p>
+      <div class="header-text">
+        <span class="badge" data-lang="id">Kebijakan Privasi</span>
+        <span class="badge" data-lang="en">Privacy Policy</span>
+        <h1>Renns Themer</h1>
+        <p class="meta" data-lang="id">Berlaku mulai 29 Juli 2026</p>
+        <p class="meta" data-lang="en">Effective July 29, 2026</p>
+      </div>
+      <div class="lang-toggle">
+        <button type="button" data-set-lang="id">ID</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
     </header>
 
-    <p>
-      Renns Themer adalah aplikasi utilitas untuk memasang file tema kustom (<code>.xth</code> /
-      <code>.zth</code>) pada perangkat Transsion (Infinix/Tecno/itel). Halaman ini menjelaskan
-      data apa yang diakses aplikasi ini dan bagaimana data tersebut digunakan.
-    </p>
+    <div data-lang="id">
+      <p>
+        Renns Themer adalah aplikasi utilitas untuk memasang file tema kustom (<code>.xth</code> /
+        <code>.zth</code>) pada perangkat Transsion (Infinix/Tecno/itel). Halaman ini menjelaskan
+        data apa yang diakses aplikasi ini dan bagaimana data tersebut digunakan.
+      </p>
 
-    <div class="card">
-      <p><strong>Ringkasan singkat:</strong> Renns Themer tidak mengumpulkan, menyimpan, atau
-      mengirim data pribadi Anda ke server mana pun. Aplikasi ini tidak memiliki koneksi internet
-      dan tidak menyertakan SDK analitik, iklan, atau pelacakan pihak ketiga apa pun.</p>
+      <div class="card">
+        <p><strong>Ringkasan singkat:</strong> Renns Themer tidak mengumpulkan, menyimpan, atau
+        mengirim data pribadi Anda ke server mana pun. Aplikasi ini tidak memiliki koneksi
+        internet dan tidak menyertakan SDK analitik, iklan, atau pelacakan pihak ketiga apa pun.</p>
+      </div>
+
+      <h2>Data yang Diakses Aplikasi</h2>
+      <p>Untuk memasang dan mengelola file tema, aplikasi memerlukan akses ke:</p>
+      <ul>
+        <li>
+          <strong>File tema yang Anda pilih</strong> (<code>.xth</code> / <code>.zth</code>) —
+          dibaca untuk disalin ke folder tema aplikasi launcher/tema Transsion di perangkat Anda.
+        </li>
+        <li>
+          <strong>Folder data aplikasi launcher/tema Transsion</strong> (mis.
+          <code>Android/data/com.transsion.theme/files/</code>) — diakses melalui
+          <a href="https://shizuku.rikka.app/" target="_blank" rel="noopener">Shizuku</a> atau
+          akses root, khusus untuk menyalin, membaca metadata, dan menghapus file tema yang Anda
+          kelola sendiri di dalam aplikasi ini.
+        </li>
+      </ul>
+      <p>
+        Semua pemrosesan ini terjadi <strong>sepenuhnya di perangkat Anda</strong>. Tidak ada
+        file, metadata, maupun informasi lain yang dikirim keluar dari perangkat Anda oleh
+        aplikasi ini.
+      </p>
+
+      <h2>Data yang TIDAK Dikumpulkan</h2>
+      <ul>
+        <li>Tidak ada nama, email, nomor telepon, atau data identitas pribadi lainnya.</li>
+        <li>Tidak ada data lokasi.</li>
+        <li>Tidak ada riwayat penggunaan, statistik, atau data analitik.</li>
+        <li>Tidak ada iklan maupun SDK pelacakan pihak ketiga.</li>
+        <li>Tidak ada akun pengguna atau proses login.</li>
+      </ul>
+
+      <h2>Izin yang Digunakan</h2>
+      <p>Aplikasi ini dapat meminta izin berikut, hanya untuk fungsi intinya memasang tema:</p>
+      <ul>
+        <li><strong>Akses penyimpanan / manajemen file</strong> — untuk membaca file tema yang
+        Anda pilih dan menyalinnya ke folder tujuan yang sesuai.</li>
+        <li><strong>Shizuku</strong> (opsional, jika Anda memasang aplikasi Shizuku secara
+        terpisah) — untuk menjalankan operasi salin/hapus file pada folder aplikasi launcher/tema
+        lain, yang tidak dapat diakses langsung oleh aplikasi biasa karena kebijakan penyimpanan
+        terbatas (scoped storage) Android.</li>
+      </ul>
+
+      <h2>Tautan Eksternal</h2>
+      <p>
+        Halaman "Tentang" pada aplikasi menyertakan tautan ke kanal YouTube pembuat aplikasi.
+        Tautan ini membuka browser/aplikasi YouTube di luar Renns Themer dan tunduk pada
+        kebijakan privasi YouTube/Google sendiri, bukan kebijakan ini.
+      </p>
+
+      <h2>Perubahan pada Kebijakan Ini</h2>
+      <p>
+        Jika kebijakan ini berubah di masa mendatang, pembaruan akan dipublikasikan di halaman
+        ini dengan tanggal berlaku yang diperbarui.
+      </p>
+
+      <h2>Kontak</h2>
+      <p>
+        Pertanyaan seputar kebijakan privasi ini dapat disampaikan melalui kanal YouTube
+        <a href="https://www.youtube.com/@renns_youtube" target="_blank" rel="noopener">Renn's YouTube</a>.
+      </p>
     </div>
 
-    <h2>Data yang Diakses Aplikasi</h2>
-    <p>Untuk memasang dan mengelola file tema, aplikasi memerlukan akses ke:</p>
-    <ul>
-      <li>
-        <strong>File tema yang Anda pilih</strong> (<code>.xth</code> / <code>.zth</code>) —
-        dibaca untuk disalin ke folder tema aplikasi launcher/tema Transsion di perangkat Anda.
-      </li>
-      <li>
-        <strong>Folder data aplikasi launcher/tema Transsion</strong> (mis.
-        <code>Android/data/com.transsion.theme/files/</code>) — diakses melalui
-        <a href="https://shizuku.rikka.app/" target="_blank" rel="noopener">Shizuku</a> atau akses
-        root, khusus untuk menyalin, membaca metadata, dan menghapus file tema yang Anda kelola
-        sendiri di dalam aplikasi ini.
-      </li>
-    </ul>
-    <p>
-      Semua pemrosesan ini terjadi <strong>sepenuhnya di perangkat Anda</strong>. Tidak ada file,
-      metadata, maupun informasi lain yang dikirim keluar dari perangkat Anda oleh aplikasi ini.
-    </p>
+    <div data-lang="en">
+      <p>
+        Renns Themer is a utility app for installing custom theme files (<code>.xth</code> /
+        <code>.zth</code>) on Transsion devices (Infinix/Tecno/itel). This page explains what
+        data the app accesses and how it's used.
+      </p>
 
-    <h2>Data yang TIDAK Dikumpulkan</h2>
-    <ul>
-      <li>Tidak ada nama, email, nomor telepon, atau data identitas pribadi lainnya.</li>
-      <li>Tidak ada data lokasi.</li>
-      <li>Tidak ada riwayat penggunaan, statistik, atau data analitik.</li>
-      <li>Tidak ada iklan maupun SDK pelacakan pihak ketiga.</li>
-      <li>Tidak ada akun pengguna atau proses login.</li>
-    </ul>
+      <div class="card">
+        <p><strong>Short version:</strong> Renns Themer does not collect, store, or transmit any
+        of your personal data to any server. The app has no internet connectivity and includes
+        no analytics, advertising, or third-party tracking SDKs.</p>
+      </div>
 
-    <h2>Izin yang Digunakan</h2>
-    <p>Aplikasi ini dapat meminta izin berikut, hanya untuk fungsi intinya memasang tema:</p>
-    <ul>
-      <li><strong>Akses penyimpanan / manajemen file</strong> — untuk membaca file tema yang
-      Anda pilih dan menyalinnya ke folder tujuan yang sesuai.</li>
-      <li><strong>Shizuku</strong> (opsional, jika Anda memasang aplikasi Shizuku secara
-      terpisah) — untuk menjalankan operasi salin/hapus file pada folder aplikasi launcher/tema
-      lain, yang tidak dapat diakses langsung oleh aplikasi biasa karena kebijakan penyimpanan
-      terbatas (scoped storage) Android.</li>
-    </ul>
+      <h2>Data the App Accesses</h2>
+      <p>To install and manage theme files, the app needs access to:</p>
+      <ul>
+        <li>
+          <strong>The theme file you pick</strong> (<code>.xth</code> / <code>.zth</code>) —
+          read in order to copy it into your Transsion launcher/theme app's theme folder.
+        </li>
+        <li>
+          <strong>The Transsion launcher/theme app's data folder</strong> (e.g.
+          <code>Android/data/com.transsion.theme/files/</code>) — accessed through
+          <a href="https://shizuku.rikka.app/" target="_blank" rel="noopener">Shizuku</a> or
+          root access, solely to copy, read metadata from, and delete the theme files you manage
+          inside this app.
+        </li>
+      </ul>
+      <p>
+        All of this processing happens <strong>entirely on your device</strong>. No file,
+        metadata, or other information is ever sent off your device by this app.
+      </p>
 
-    <h2>Tautan Eksternal</h2>
-    <p>
-      Halaman "Tentang" pada aplikasi menyertakan tautan ke kanal YouTube pembuat aplikasi. Tautan
-      ini membuka browser/aplikasi YouTube di luar Renns Themer dan tunduk pada kebijakan privasi
-      YouTube/Google sendiri, bukan kebijakan ini.
-    </p>
+      <h2>Data NOT Collected</h2>
+      <ul>
+        <li>No name, email, phone number, or other personal identity data.</li>
+        <li>No location data.</li>
+        <li>No usage history, statistics, or analytics data.</li>
+        <li>No advertising or third-party tracking SDKs.</li>
+        <li>No user accounts or login process.</li>
+      </ul>
 
-    <h2>Perubahan pada Kebijakan Ini</h2>
-    <p>
-      Jika kebijakan ini berubah di masa mendatang, pembaruan akan dipublikasikan di halaman ini
-      dengan tanggal berlaku yang diperbarui.
-    </p>
+      <h2>Permissions Used</h2>
+      <p>The app may request the following permissions, solely to support its core theme-installing function:</p>
+      <ul>
+        <li><strong>Storage / file access</strong> — to read the theme file you pick and copy
+        it to the appropriate destination folder.</li>
+        <li><strong>Shizuku</strong> (optional, if you separately install the Shizuku app) — to
+        run copy/delete file operations against another app's data folder, which a regular app
+        can't reach directly under Android's scoped storage restrictions.</li>
+      </ul>
 
-    <h2>Kontak</h2>
-    <p>
-      Pertanyaan seputar kebijakan privasi ini dapat disampaikan melalui kanal YouTube
-      <a href="https://www.youtube.com/@renns_youtube" target="_blank" rel="noopener">Renn's YouTube</a>.
-    </p>
+      <h2>External Links</h2>
+      <p>
+        The app's "About" page includes a link to the developer's YouTube channel. That link
+        opens your browser/the YouTube app outside of Renns Themer and is governed by
+        YouTube/Google's own privacy policy, not this one.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        If this policy changes in the future, the update will be published on this page with a
+        revised effective date.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this privacy policy can be sent through
+        <a href="https://www.youtube.com/@renns_youtube" target="_blank" rel="noopener">Renn's YouTube</a>.
+      </p>
+    </div>
 
     <hr />
     <footer>
       &copy; 2026 Renn's Project — Renns Themer.
     </footer>
   </div>
+
+  <script>
+    // Auto-detects from the browser/device language, defaulting to Indonesian for anything
+    // that isn't clearly English — matches this app's primary audience. The toggle buttons
+    // exist for exactly the case detection gets wrong: no dead end, always a manual override.
+    (function () {
+      var body = document.body;
+      var buttons = document.querySelectorAll('[data-set-lang]');
+
+      function setLang(lang) {
+        body.classList.remove('lang-id', 'lang-en');
+        body.classList.add('lang-' + lang);
+        document.documentElement.lang = lang;
+        buttons.forEach(function (btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+        });
+        try { localStorage.setItem('renns-privacy-lang', lang); } catch (e) {}
+      }
+
+      var stored = null;
+      try { stored = localStorage.getItem('renns-privacy-lang'); } catch (e) {}
+
+      var initial = stored;
+      if (initial !== 'id' && initial !== 'en') {
+        var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        initial = browserLang.indexOf('id') === 0 ? 'id' : 'en';
+      }
+      setLang(initial);
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setLang(btn.getAttribute('data-set-lang'));
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
