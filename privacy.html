@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kebijakan Privasi — Renns Themer</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --text: #1c1c1e;
+    --text-secondary: #6b6b70;
+    --accent: #ff5a36;
+    --card: #f5f5f7;
+    --divider: #e4e4e7;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10;
+      --text: #f2f2f3;
+      --text-secondary: #9a9aa0;
+      --accent: #ff7a5c;
+      --card: #1c1c1f;
+      --divider: #303034;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  header {
+    margin-bottom: 40px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 8px;
+  }
+
+  .meta {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+  }
+
+  p {
+    margin: 0 0 14px;
+    font-size: 15px;
+  }
+
+  ul {
+    margin: 0 0 14px;
+    padding-left: 20px;
+  }
+
+  li {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin: 16px 0;
+  }
+
+  .card p:last-child,
+  .card ul:last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 40px 0;
+  }
+
+  footer {
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Kebijakan Privasi</span>
+      <h1>Renns Themer</h1>
+      <p class="meta">Berlaku mulai 29 Juli 2026</p>
+    </header>
+
+    <p>
+      Renns Themer adalah aplikasi utilitas untuk memasang file tema kustom (<code>.xth</code> /
+      <code>.zth</code>) pada perangkat Transsion (Infinix/Tecno/itel). Halaman ini menjelaskan
+      data apa yang diakses aplikasi ini dan bagaimana data tersebut digunakan.
+    </p>
+
+    <div class="card">
+      <p><strong>Ringkasan singkat:</strong> Renns Themer tidak mengumpulkan, menyimpan, atau
+      mengirim data pribadi Anda ke server mana pun. Aplikasi ini tidak memiliki koneksi internet
+      dan tidak menyertakan SDK analitik, iklan, atau pelacakan pihak ketiga apa pun.</p>
+    </div>
+
+    <h2>Data yang Diakses Aplikasi</h2>
+    <p>Untuk memasang dan mengelola file tema, aplikasi memerlukan akses ke:</p>
+    <ul>
+      <li>
+        <strong>File tema yang Anda pilih</strong> (<code>.xth</code> / <code>.zth</code>) —
+        dibaca untuk disalin ke folder tema aplikasi launcher/tema Transsion di perangkat Anda.
+      </li>
+      <li>
+        <strong>Folder data aplikasi launcher/tema Transsion</strong> (mis.
+        <code>Android/data/com.transsion.theme/files/</code>) — diakses melalui
+        <a href="https://shizuku.rikka.app/" target="_blank" rel="noopener">Shizuku</a> atau akses
+        root, khusus untuk menyalin, membaca metadata, dan menghapus file tema yang Anda kelola
+        sendiri di dalam aplikasi ini.
+      </li>
+    </ul>
+    <p>
+      Semua pemrosesan ini terjadi <strong>sepenuhnya di perangkat Anda</strong>. Tidak ada file,
+      metadata, maupun informasi lain yang dikirim keluar dari perangkat Anda oleh aplikasi ini.
+    </p>
+
+    <h2>Data yang TIDAK Dikumpulkan</h2>
+    <ul>
+      <li>Tidak ada nama, email, nomor telepon, atau data identitas pribadi lainnya.</li>
+      <li>Tidak ada data lokasi.</li>
+      <li>Tidak ada riwayat penggunaan, statistik, atau data analitik.</li>
+      <li>Tidak ada iklan maupun SDK pelacakan pihak ketiga.</li>
+      <li>Tidak ada akun pengguna atau proses login.</li>
+    </ul>
+
+    <h2>Izin yang Digunakan</h2>
+    <p>Aplikasi ini dapat meminta izin berikut, hanya untuk fungsi intinya memasang tema:</p>
+    <ul>
+      <li><strong>Akses penyimpanan / manajemen file</strong> — untuk membaca file tema yang
+      Anda pilih dan menyalinnya ke folder tujuan yang sesuai.</li>
+      <li><strong>Shizuku</strong> (opsional, jika Anda memasang aplikasi Shizuku secara
+      terpisah) — untuk menjalankan operasi salin/hapus file pada folder aplikasi launcher/tema
+      lain, yang tidak dapat diakses langsung oleh aplikasi biasa karena kebijakan penyimpanan
+      terbatas (scoped storage) Android.</li>
+    </ul>
+
+    <h2>Tautan Eksternal</h2>
+    <p>
+      Halaman "Tentang" pada aplikasi menyertakan tautan ke kanal YouTube pembuat aplikasi. Tautan
+      ini membuka browser/aplikasi YouTube di luar Renns Themer dan tunduk pada kebijakan privasi
+      YouTube/Google sendiri, bukan kebijakan ini.
+    </p>
+
+    <h2>Perubahan pada Kebijakan Ini</h2>
+    <p>
+      Jika kebijakan ini berubah di masa mendatang, pembaruan akan dipublikasikan di halaman ini
+      dengan tanggal berlaku yang diperbarui.
+    </p>
+
+    <h2>Kontak</h2>
+    <p>
+      Pertanyaan seputar kebijakan privasi ini dapat disampaikan melalui kanal YouTube
+      <a href="https://www.youtube.com/@renns_youtube" target="_blank" rel="noopener">Renn's YouTube</a>.
+    </p>
+
+    <hr />
+    <footer>
+      &copy; 2026 Renn's Project — Renns Themer.
+    </footer>
+  </div>
+</body>
+</html>
